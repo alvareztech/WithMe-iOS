@@ -13,6 +13,8 @@
 		9DF0A4F61BF1A8140043B95F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0A4F41BF1A8140043B95F /* Main.storyboard */; };
 		9DF0A4F81BF1A8140043B95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0A4F71BF1A8140043B95F /* Assets.xcassets */; };
 		9DF0A4FB1BF1A8140043B95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0A4F91BF1A8140043B95F /* LaunchScreen.storyboard */; };
+		9DF0A5051BF1ABB60043B95F /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A5041BF1ABB60043B95F /* SearchTableViewController.m */; };
+		9DF0A5091BF1ADEB0043B95F /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A5081BF1ADEB0043B95F /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		9DF0A4F71BF1A8140043B95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DF0A4FA1BF1A8140043B95F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DF0A4FC1BF1A8140043B95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DF0A5031BF1ABB60043B95F /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewController.h; path = Controllers/SearchTableViewController.h; sourceTree = "<group>"; };
+		9DF0A5041BF1ABB60043B95F /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewController.m; path = Controllers/SearchTableViewController.m; sourceTree = "<group>"; };
+		9DF0A5071BF1ADEB0043B95F /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Movie.h; path = Classes/Movie.h; sourceTree = "<group>"; };
+		9DF0A5081BF1ADEB0043B95F /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = Classes/Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 		9DF0A4EA1BF1A8140043B95F /* WithMe */ = {
 			isa = PBXGroup;
 			children = (
+				9DF0A5061BF1AD960043B95F /* Classes */,
+				9DF0A5021BF1AB830043B95F /* Controllers */,
 				9DF0A4EE1BF1A8140043B95F /* AppDelegate.h */,
 				9DF0A4EF1BF1A8140043B95F /* AppDelegate.m */,
 				9DF0A4F11BF1A8140043B95F /* ViewController.h */,
@@ -77,6 +85,24 @@
 				9DF0A4EC1BF1A8140043B95F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9DF0A5021BF1AB830043B95F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DF0A5031BF1ABB60043B95F /* SearchTableViewController.h */,
+				9DF0A5041BF1ABB60043B95F /* SearchTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9DF0A5061BF1AD960043B95F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9DF0A5071BF1ADEB0043B95F /* Movie.h */,
+				9DF0A5081BF1ADEB0043B95F /* Movie.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +177,9 @@
 			files = (
 				9DF0A4F31BF1A8140043B95F /* ViewController.m in Sources */,
 				9DF0A4F01BF1A8140043B95F /* AppDelegate.m in Sources */,
+				9DF0A5091BF1ADEB0043B95F /* Movie.m in Sources */,
 				9DF0A4ED1BF1A8140043B95F /* main.m in Sources */,
+				9DF0A5051BF1ABB60043B95F /* SearchTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
