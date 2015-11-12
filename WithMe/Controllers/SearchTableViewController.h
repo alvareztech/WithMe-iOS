@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Movie.h"
+#import "WS.h"
 
-@interface SearchTableViewController : UITableViewController
+@interface SearchTableViewController : UITableViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 @end

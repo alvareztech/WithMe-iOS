@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EBF24A81BF4D61600D436ED /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF24A71BF4D61600D436ED /* Util.m */; };
+		4EBF24AB1BF4D62D00D436ED /* WS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF24AA1BF4D62D00D436ED /* WS.m */; };
+		4EBF24AE1BF4D64200D436ED /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF24AD1BF4D64200D436ED /* Constants.m */; };
 		9DF0A4ED1BF1A8140043B95F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A4EC1BF1A8140043B95F /* main.m */; };
 		9DF0A4F01BF1A8140043B95F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A4EF1BF1A8140043B95F /* AppDelegate.m */; };
 		9DF0A4F31BF1A8140043B95F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A4F21BF1A8140043B95F /* ViewController.m */; };
@@ -18,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EBF24A61BF4D61600D436ED /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = Util/Util.h; sourceTree = "<group>"; };
+		4EBF24A71BF4D61600D436ED /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Util.m; path = Util/Util.m; sourceTree = "<group>"; };
+		4EBF24A91BF4D62D00D436ED /* WS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WS.h; path = Util/WS.h; sourceTree = "<group>"; };
+		4EBF24AA1BF4D62D00D436ED /* WS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WS.m; path = Util/WS.m; sourceTree = "<group>"; };
+		4EBF24AC1BF4D64200D436ED /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Util/Constants.h; sourceTree = "<group>"; };
+		4EBF24AD1BF4D64200D436ED /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Util/Constants.m; sourceTree = "<group>"; };
 		9DF0A4E81BF1A8140043B95F /* WithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF0A4EC1BF1A8140043B95F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DF0A4EE1BF1A8140043B95F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,6 +54,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EBF24A51BF4D29000D436ED /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4EBF24A61BF4D61600D436ED /* Util.h */,
+				4EBF24A71BF4D61600D436ED /* Util.m */,
+				4EBF24A91BF4D62D00D436ED /* WS.h */,
+				4EBF24AA1BF4D62D00D436ED /* WS.m */,
+				4EBF24AC1BF4D64200D436ED /* Constants.h */,
+				4EBF24AD1BF4D64200D436ED /* Constants.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		9DF0A4DF1BF1A8130043B95F = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +86,7 @@
 		9DF0A4EA1BF1A8140043B95F /* WithMe */ = {
 			isa = PBXGroup;
 			children = (
+				4EBF24A51BF4D29000D436ED /* Util */,
 				9DF0A5061BF1AD960043B95F /* Classes */,
 				9DF0A5021BF1AB830043B95F /* Controllers */,
 				9DF0A4EE1BF1A8140043B95F /* AppDelegate.h */,
@@ -178,8 +201,11 @@
 				9DF0A4F31BF1A8140043B95F /* ViewController.m in Sources */,
 				9DF0A4F01BF1A8140043B95F /* AppDelegate.m in Sources */,
 				9DF0A5091BF1ADEB0043B95F /* Movie.m in Sources */,
+				4EBF24AE1BF4D64200D436ED /* Constants.m in Sources */,
 				9DF0A4ED1BF1A8140043B95F /* main.m in Sources */,
 				9DF0A5051BF1ABB60043B95F /* SearchTableViewController.m in Sources */,
+				4EBF24A81BF4D61600D436ED /* Util.m in Sources */,
+				4EBF24AB1BF4D62D00D436ED /* WS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +352,7 @@
 				9DF0A5011BF1A8140043B95F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

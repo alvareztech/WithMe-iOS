@@ -23,10 +23,14 @@
     
     movies = [[NSMutableArray alloc] init];
     
+
+    self.searchTextField.delegate = self;
     [self.searchTextField becomeFirstResponder];
-    [self.searchTextField addTarget:self
-                             action:@selector(textFieldDidChange:)
-                   forControlEvents:UIControlEventEditingChanged];
+    
+//    [self.searchTextField becomeFirstResponder];
+//    [self.searchTextField addTarget:self
+//                             action:@selector(textFieldDidChange:)
+//                   forControlEvents:UIControlEventEditingChanged];
     
     
     
@@ -66,6 +70,12 @@
     descLabel.text = movie.desc;
     
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -119,7 +129,9 @@
     
     [dataTask cancel];
     
-    NSString *urlString = [NSString stringWithFormat:@"http://api.themoviedb.org/3/search/movie?query=%@&api_key=589e10387e0ca4ece633f5836fb0383f", text];
+    NSString *urlString = [WS getSearchURL:text];
+    
+    NSLog(@"urlString %@", urlString);
     
     NSURLSession *session = [NSURLSession sharedSession];
     dataTask = [session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -183,17 +195,26 @@
 }
 
 
-- (void) textFieldDidChange: (id) sender {
-    NSLog(@"> %@", self.searchTextField.text);
-    
-    NSString *text = self.searchTextField.text;
-    
-    if (text.length > 0) {
-        [self searchWS:text];
-    }
+//- (void) textFieldDidChange: (id) sender {
+//    NSLog(@"> %@", self.searchTextField.text);
+//    
+//    NSString *text = self.searchTextField.text;
+//    
+//    if (text.length > 0) {
+//        [self searchWS:text];
+//    }
+//}
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSLog(@"textFieldShouldReturn");
+    
+    [self searchWS:textField.text];
+    
+    
+    [textField resignFirstResponder];
+    
+    return YES;
 }
-
 
 
 
