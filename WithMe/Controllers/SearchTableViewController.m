@@ -9,9 +9,9 @@
 #import "SearchTableViewController.h"
 
 @interface SearchTableViewController () {
-    UISearchBar *searchBar;
-    
     NSMutableArray *movies;
+    
+    NSURLSessionDataTask *dataTask;
 }
 
 @end
@@ -23,18 +23,12 @@
     
     movies = [[NSMutableArray alloc] init];
     
+    [self.searchTextField becomeFirstResponder];
+    [self.searchTextField addTarget:self
+                             action:@selector(textFieldDidChange:)
+                   forControlEvents:UIControlEventEditingChanged];
     
     
-    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
-//    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-//    searchDisplayController.delegate = self;
-//    searchDisplayController.searchResultsDataSource = self;
-    
-    self.tableView.tableHeaderView = searchBar;
-    
-    
-    
-    [self searchWS];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -120,19 +114,22 @@
  */
 
 
-- (void) searchWS {
+- (void) searchWS: (NSString *) text  {
     NSLog(@"searchWS");
     
-    NSString *urlString = @"";
+    [dataTask cancel];
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://api.themoviedb.org/3/search/movie?query=%@&api_key=589e10387e0ca4ece633f5836fb0383f", text];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    dataTask = [session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (!error) {
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"%@", json);
             
             [self parseJSON:json];
+            NSLog(@"end todo");
         } else {
             NSLog(@"Error %@", error);
         }
@@ -147,6 +144,7 @@
     
     NSArray *results = [json objectForKey:@"results"];
     
+    movies = [[NSMutableArray alloc] init];
     for (int i = 0; i < [results count]; i++) {
         NSDictionary *movie = [results objectAtIndex:i];
         
@@ -155,13 +153,14 @@
         m.title = [movie objectForKey:@"title"];
         m.desc = [movie objectForKey:@"overview"];
         m.posterPath = [movie objectForKey:@"poster_path"];
-        
         NSLog(@"> title: %@", m.title);
-        
         [movies addObject:m];
     }
+
     dispatch_async(dispatch_get_main_queue(), ^{
+        
         [self.tableView reloadData];
+
     });
 }
 
@@ -184,7 +183,16 @@
 }
 
 
+- (void) textFieldDidChange: (id) sender {
+    NSLog(@"> %@", self.searchTextField.text);
+    
+    NSString *text = self.searchTextField.text;
+    
+    if (text.length > 0) {
+        [self searchWS:text];
+    }
 
+}
 
 
 

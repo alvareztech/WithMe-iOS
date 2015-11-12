@@ -10,5 +10,6 @@
 #import "Movie.h"
 
 @interface SearchTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 @end
