@@ -16,6 +16,7 @@
 
 @end
 
+
 @implementation SearchTableViewController
 
 - (void)viewDidLoad {
@@ -39,6 +40,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,9 +67,12 @@
     // Configure the cell...
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
     UILabel *descLabel = (UILabel *)[cell viewWithTag:2];
+    UIImageView *bannerImageView = (UIImageView *)[cell viewWithTag:3];
     
     titleLabel.text = movie.title;
     descLabel.text = movie.desc;
+    [bannerImageView sd_setImageWithURL:[WS getImageURL:movie.posterPath]
+                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return cell;
 }
@@ -215,6 +220,7 @@
     
     return YES;
 }
+
 
 
 

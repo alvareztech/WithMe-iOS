@@ -17,9 +17,11 @@
 #define PORT @"80"
 
 #define URI_SEARCH @"3/search/movie?query="
-
+#define URI_IMAGE @"image.tmdb.org/t/p/w500"
 
 + (NSString *) getApiKeyURL;
 + (NSString *) getSearchURL: (NSString *) text;
+
++ (NSURL *) getImageURL: (NSString *) name;
 
 @end

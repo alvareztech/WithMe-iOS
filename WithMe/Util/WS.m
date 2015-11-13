@@ -19,4 +19,10 @@
     return [NSString stringWithFormat:@"%@://%@:%@/%@%@%@", PROTOCOL, HOST, PORT, URI_SEARCH, text, [WS getApiKeyURL]];
 }
 
++ (NSURL *) getImageURL: (NSString *) name {
+    NSString *urlString = [NSString stringWithFormat:@"%@://%@%@", PROTOCOL, URI_IMAGE, name];
+    NSLog(@"getImageURL %@", urlString);
+    return [NSURL URLWithString:urlString];
+}
+
 @end
