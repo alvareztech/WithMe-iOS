@@ -10,8 +10,11 @@
 
 @interface Movie : NSObject
 
+@property (nonatomic, strong) NSString *ide;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *desc;
 @property (nonatomic, strong) NSString *posterPath;
+
+@property BOOL added;
 
 @end

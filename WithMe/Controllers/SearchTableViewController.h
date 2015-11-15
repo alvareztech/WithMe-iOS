@@ -13,6 +13,7 @@
 #import "WS.h"
 #import "UIImageView+WebCache.h"
 #import "PFUser+Digits.h"
+#import "AddButton.h"
 
 @interface SearchTableViewController : UITableViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

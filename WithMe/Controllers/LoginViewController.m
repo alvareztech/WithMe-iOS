@@ -19,26 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    DGTAuthenticateButton *authButton;
-    authButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
-        if (session.userID) {
-            // TODO: associate the session userID with your user model
-            NSString *msg = [NSString stringWithFormat:@"Phone number: %@", session.phoneNumber];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You are logged in!"
-                                                            message:msg
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        } else if (error) {
-            NSLog(@"Authentication error: %@", error.localizedDescription);
-        }
-    }];
-    authButton.center = self.view.center;
-    authButton.digitsAppearance = [self makeTheme];
-
-    [self.view addSubview:authButton];
+//    
+//    DGTAuthenticateButton *authButton;
+//    authButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
+//        if (session.userID) {
+//            // TODO: associate the session userID with your user model
+//            NSString *msg = [NSString stringWithFormat:@"Phone number: %@", session.phoneNumber];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You are logged in!"
+//                                                            message:msg
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"OK"
+//                                                  otherButtonTitles:nil];
+//            [alert show];
+//        } else if (error) {
+//            NSLog(@"Authentication error: %@", error.localizedDescription);
+//        }
+//    }];
+//    authButton.center = self.view.center;
+//    authButton.digitsAppearance = [self makeTheme];
+//
+//    [self.view addSubview:authButton];
 
 }
 
@@ -69,5 +69,36 @@
 
 
 - (IBAction)signIn:(UIButton *)sender {
+    Digits *digits = [Digits sharedInstance];
+    
+    DGTAuthenticationConfiguration *configuration = [[DGTAuthenticationConfiguration alloc] initWithAccountFields:DGTAccountFieldsDefaultOptionMask];
+    configuration.phoneNumber = @"+591";
+    configuration.appearance = [self makeTheme];
+
+    [digits authenticateWithViewController:nil configuration:configuration completion:^(DGTSession *session, NSError *error) {
+        if (!error) {
+            [PFUser loginWithDigitsInBackground:^(PFUser *user, NSError *error) {
+                if(!error){
+                    // do something with user
+                    NSLog(@"START CREDENTIALS");
+                    PFUser *user = [PFUser currentUser];
+                    NSLog(@"Parse User: %@ %@ %@", user.username, user.password, user[@"phone"]);
+                    DGTSession *session = [[Digits sharedInstance] session];
+                    NSLog(@"Digits Session: %@ %@ %@", session.authToken, session.authTokenSecret, session.phoneNumber);
+                    NSLog(@"END CREDENTIALS");
+                    
+                    UITabBarController *mainTabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
+                    [self presentViewController:mainTabBarController animated:YES completion:nil];
+                    
+                } else {
+                    NSLog(@"Parse Error %@", error);
+                }
+            }];
+        } else {
+            NSLog(@"Digits Error %@", error);
+        }
+    }];
+    
 }
+
 @end

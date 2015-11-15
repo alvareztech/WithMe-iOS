@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <DigitsKit/DigitsKit.h>
+#import <Parse/Parse.h>
 #import "UIColor+WithMe.h"
+#import "PFUser+Digits.h"
 
 @interface LoginViewController : UIViewController
 

@@ -10,8 +10,6 @@
 
 @interface SearchTableViewController () {
     NSMutableArray *movies;
-    
-    NSURLSessionDataTask *dataTask;
 }
 
 @end
@@ -21,12 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PFUser *user = [PFUser currentUser];
+    NSLog(@"Parse User: %@ %@ %@", user.username, user.password, user[@"phone"]);
 
-    [PFUser loginWithDigitsInBackground:^(PFUser *user, NSError *error) {
-        if(!error){
-            NSLog(@"User: %@", user);
-        }
-    }];
+//    [PFUser loginWithDigitsInBackground:^(PFUser *user, NSError *error) {
+//        if(!error){
+//            NSLog(@"User: %@", user);
+//        } else {
+//            NSLog(@"Error: %@", error);
+//        }
+//    }];
 
     
     DGTSession *session = [[Digits sharedInstance] session];
@@ -78,11 +80,14 @@
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
     UILabel *descLabel = (UILabel *)[cell viewWithTag:2];
     UIImageView *bannerImageView = (UIImageView *)[cell viewWithTag:3];
+    AddButton *addButton = (AddButton *)[cell viewWithTag:4];
+    addButton.index = (int) indexPath.row;
     
     titleLabel.text = movie.title;
     descLabel.text = movie.desc;
     [bannerImageView sd_setImageWithURL:[WS getImageURL:movie.posterPath]
                        placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [addButton addTarget:self action:@selector(addTask:) forControlEvents:UIControlEventTouchDown];
     
     return cell;
 }
@@ -142,14 +147,12 @@
 - (void) searchWS: (NSString *) text  {
     NSLog(@"searchWS");
     
-    [dataTask cancel];
-    
     NSString *urlString = [WS getSearchURL:text];
     
     NSLog(@"urlString %@", urlString);
     
     NSURLSession *session = [NSURLSession sharedSession];
-    dataTask = [session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (!error) {
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -176,7 +179,7 @@
         NSDictionary *movie = [results objectAtIndex:i];
         
         Movie *m = [[Movie alloc] init];
-        
+        m.ide = [movie objectForKey:@"id"];
         m.title = [movie objectForKey:@"title"];
         m.desc = [movie objectForKey:@"overview"];
         m.posterPath = [movie objectForKey:@"poster_path"];
@@ -189,24 +192,6 @@
         [self.tableView reloadData];
 
     });
-}
-
-
-- (void) downloadIamge {
-    //1
-    NSURL *url = [NSURL URLWithString:
-                  @"http://upload.wikimedia.org/wikipedia/commons/7/7f/Williams_River-27527.jpg"];
-    
-    // 2
-    NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
-                                                   downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-                                                       // 3
-                                                       UIImage *downloadedImage = [UIImage imageWithData:
-                                                                                   [NSData dataWithContentsOfURL:location]];
-                                                   }];
-    
-    // 4	
-    [downloadPhotoTask resume];
 }
 
 
@@ -223,13 +208,55 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSLog(@"textFieldShouldReturn");
     
-    [self searchWS:textField.text];
+    NSString *text = textField.text;
+    text = [text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    [self searchWS:text];
     
     
     [textField resignFirstResponder];
     
     return YES;
 }
+
+
+
+- (void) addTask:(AddButton *)sender {
+    NSLog(@"addTask %i", sender.index);
+    
+    Movie *movie = [movies objectAtIndex:sender.index];
+    
+    PFObject *task = [PFObject objectWithClassName:@"Task"];
+    task[@"Owner"] = [PFUser currentUser];
+    task[@"ResourceId"] = [NSString stringWithFormat:@"%@", movie.ide];
+    task[@"ResourceName"] = movie.title;
+    task[@"ResourceImageUrl"] = movie.posterPath;
+    [task saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"OK");
+        } else {
+            NSLog(@"Error %@", error);
+        }
+    }];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -39,6 +39,8 @@
 		9DA7C30A1BF8FE950004C9BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7C3091BF8FE950004C9BA /* libz.tbd */; };
 		9DA7C30C1BF8FE9E0004C9BA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7C30B1BF8FE9E0004C9BA /* libsqlite3.tbd */; };
 		9DA7C3101BF904380004C9BA /* PFUser+Digits.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7C30F1BF904380004C9BA /* PFUser+Digits.m */; };
+		9DA7C3161BF90F750004C9BA /* AddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7C3151BF90F750004C9BA /* AddButton.m */; };
+		9DA7C3191BF915340004C9BA /* TasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7C3181BF915340004C9BA /* TasksTableViewController.m */; };
 		9DC671C31BF776AE00AD02ED /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC671BF1BF776AD00AD02ED /* Fabric.framework */; };
 		9DC671C41BF776AE00AD02ED /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC671C01BF776AE00AD02ED /* DigitsKit.framework */; };
 		9DC671C51BF776AE00AD02ED /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DC671C11BF776AE00AD02ED /* DigitsKitResources.bundle */; };
@@ -109,6 +111,10 @@
 		9DA7C30B1BF8FE9E0004C9BA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9DA7C30E1BF904380004C9BA /* PFUser+Digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFUser+Digits.h"; sourceTree = "<group>"; };
 		9DA7C30F1BF904380004C9BA /* PFUser+Digits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFUser+Digits.m"; sourceTree = "<group>"; };
+		9DA7C3141BF90F750004C9BA /* AddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddButton.h; path = Util/AddButton.h; sourceTree = "<group>"; };
+		9DA7C3151BF90F750004C9BA /* AddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddButton.m; path = Util/AddButton.m; sourceTree = "<group>"; };
+		9DA7C3171BF915340004C9BA /* TasksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TasksTableViewController.h; path = Controllers/TasksTableViewController.h; sourceTree = "<group>"; };
+		9DA7C3181BF915340004C9BA /* TasksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TasksTableViewController.m; path = Controllers/TasksTableViewController.m; sourceTree = "<group>"; };
 		9DC671BF1BF776AD00AD02ED /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		9DC671C01BF776AE00AD02ED /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = SOURCE_ROOT; };
 		9DC671C11BF776AE00AD02ED /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = SOURCE_ROOT; };
@@ -214,6 +220,7 @@
 		4EBF24A51BF4D29000D436ED /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9DA7C3131BF90F510004C9BA /* Custom */,
 				4EBF24A61BF4D61600D436ED /* Util.h */,
 				4EBF24A71BF4D61600D436ED /* Util.m */,
 				4EBF24A91BF4D62D00D436ED /* WS.h */,
@@ -272,6 +279,15 @@
 			name = Others;
 			sourceTree = "<group>";
 		};
+		9DA7C3131BF90F510004C9BA /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				9DA7C3141BF90F750004C9BA /* AddButton.h */,
+				9DA7C3151BF90F750004C9BA /* AddButton.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 		9DF0A4DF1BF1A8130043B95F = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +339,8 @@
 				9DF0A5041BF1ABB60043B95F /* SearchTableViewController.m */,
 				9DC671C71BF7788A00AD02ED /* LoginViewController.h */,
 				9DC671C81BF7788A00AD02ED /* LoginViewController.m */,
+				9DA7C3171BF915340004C9BA /* TasksTableViewController.h */,
+				9DA7C3181BF915340004C9BA /* TasksTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -442,12 +460,14 @@
 				4EBF24AE1BF4D64200D436ED /* Constants.m in Sources */,
 				9DF0A4ED1BF1A8140043B95F /* main.m in Sources */,
 				4E00FFB71BF665AF00F537B8 /* UIImage+MultiFormat.m in Sources */,
+				9DA7C3191BF915340004C9BA /* TasksTableViewController.m in Sources */,
 				9DF0A5051BF1ABB60043B95F /* SearchTableViewController.m in Sources */,
 				4E00FFAE1BF665AF00F537B8 /* SDImageCache.m in Sources */,
 				4EBF24A81BF4D61600D436ED /* Util.m in Sources */,
 				4EBF24AB1BF4D62D00D436ED /* WS.m in Sources */,
 				4E00FFB61BF665AF00F537B8 /* UIImage+GIF.m in Sources */,
 				4E00FFB11BF665AF00F537B8 /* SDWebImageDownloader.m in Sources */,
+				9DA7C3161BF90F750004C9BA /* AddButton.m in Sources */,
 				4E00FFBA1BF665AF00F537B8 /* UIImageView+WebCache.m in Sources */,
 				4E00FFAC1BF665AF00F537B8 /* MKAnnotationView+WebCache.m in Sources */,
 				9DC671CC1BF795CE00AD02ED /* UIColor+WithMe.m in Sources */,
