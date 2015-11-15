@@ -26,6 +26,12 @@
 		4EBF24A81BF4D61600D436ED /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF24A71BF4D61600D436ED /* Util.m */; };
 		4EBF24AB1BF4D62D00D436ED /* WS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF24AA1BF4D62D00D436ED /* WS.m */; };
 		4EBF24AE1BF4D64200D436ED /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF24AD1BF4D64200D436ED /* Constants.m */; };
+		9DC671C31BF776AE00AD02ED /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC671BF1BF776AD00AD02ED /* Fabric.framework */; };
+		9DC671C41BF776AE00AD02ED /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC671C01BF776AE00AD02ED /* DigitsKit.framework */; };
+		9DC671C51BF776AE00AD02ED /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DC671C11BF776AE00AD02ED /* DigitsKitResources.bundle */; };
+		9DC671C61BF776AE00AD02ED /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC671C21BF776AE00AD02ED /* TwitterCore.framework */; };
+		9DC671C91BF7788A00AD02ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC671C81BF7788A00AD02ED /* LoginViewController.m */; };
+		9DC671CC1BF795CE00AD02ED /* UIColor+WithMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC671CB1BF795CE00AD02ED /* UIColor+WithMe.m */; };
 		9DF0A4ED1BF1A8140043B95F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A4EC1BF1A8140043B95F /* main.m */; };
 		9DF0A4F01BF1A8140043B95F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A4EF1BF1A8140043B95F /* AppDelegate.m */; };
 		9DF0A4F31BF1A8140043B95F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A4F21BF1A8140043B95F /* ViewController.m */; };
@@ -76,6 +82,14 @@
 		4EBF24AA1BF4D62D00D436ED /* WS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WS.m; path = Util/WS.m; sourceTree = "<group>"; };
 		4EBF24AC1BF4D64200D436ED /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Util/Constants.h; sourceTree = "<group>"; };
 		4EBF24AD1BF4D64200D436ED /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Util/Constants.m; sourceTree = "<group>"; };
+		9DC671BF1BF776AD00AD02ED /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		9DC671C01BF776AE00AD02ED /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = SOURCE_ROOT; };
+		9DC671C11BF776AE00AD02ED /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = SOURCE_ROOT; };
+		9DC671C21BF776AE00AD02ED /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = SOURCE_ROOT; };
+		9DC671C71BF7788A00AD02ED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
+		9DC671C81BF7788A00AD02ED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
+		9DC671CA1BF795CD00AD02ED /* UIColor+WithMe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+WithMe.h"; path = "Util/UIColor+WithMe.h"; sourceTree = "<group>"; };
+		9DC671CB1BF795CE00AD02ED /* UIColor+WithMe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+WithMe.m"; path = "Util/UIColor+WithMe.m"; sourceTree = "<group>"; };
 		9DF0A4E81BF1A8140043B95F /* WithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF0A4EC1BF1A8140043B95F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DF0A4EE1BF1A8140043B95F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC671C31BF776AE00AD02ED /* Fabric.framework in Frameworks */,
+				9DC671C61BF776AE00AD02ED /* TwitterCore.framework in Frameworks */,
+				9DC671C41BF776AE00AD02ED /* DigitsKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +123,10 @@
 		4E00FF891BF54B3400F537B8 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				9DC671BF1BF776AD00AD02ED /* Fabric.framework */,
+				9DC671C01BF776AE00AD02ED /* DigitsKit.framework */,
+				9DC671C11BF776AE00AD02ED /* DigitsKitResources.bundle */,
+				9DC671C21BF776AE00AD02ED /* TwitterCore.framework */,
 				4E00FF8A1BF665AF00F537B8 /* SDWebImage */,
 			);
 			name = Libs;
@@ -160,6 +181,8 @@
 				4EBF24AA1BF4D62D00D436ED /* WS.m */,
 				4EBF24AC1BF4D64200D436ED /* Constants.h */,
 				4EBF24AD1BF4D64200D436ED /* Constants.m */,
+				9DC671CA1BF795CD00AD02ED /* UIColor+WithMe.h */,
+				9DC671CB1BF795CE00AD02ED /* UIColor+WithMe.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -213,6 +236,8 @@
 			children = (
 				9DF0A5031BF1ABB60043B95F /* SearchTableViewController.h */,
 				9DF0A5041BF1ABB60043B95F /* SearchTableViewController.m */,
+				9DC671C71BF7788A00AD02ED /* LoginViewController.h */,
+				9DC671C81BF7788A00AD02ED /* LoginViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +261,7 @@
 				9DF0A4E41BF1A8130043B95F /* Sources */,
 				9DF0A4E51BF1A8130043B95F /* Frameworks */,
 				9DF0A4E61BF1A8130043B95F /* Resources */,
+				9DC671BE1BF7756100AD02ED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,6 +283,7 @@
 				TargetAttributes = {
 					9DF0A4E71BF1A8130043B95F = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = WUPQR42HTQ;
 					};
 				};
 			};
@@ -283,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC671C51BF776AE00AD02ED /* DigitsKitResources.bundle in Resources */,
 				9DF0A4FB1BF1A8140043B95F /* LaunchScreen.storyboard in Resources */,
 				9DF0A4F81BF1A8140043B95F /* Assets.xcassets in Resources */,
 				9DF0A4F61BF1A8140043B95F /* Main.storyboard in Resources */,
@@ -290,6 +318,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9DC671BE1BF7756100AD02ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 14c760c0d0631fe63e39c6111fb3cbff14432bef c87e0906f82637468bd0f6b8321b0fca41cf9a945793e7ad7687a62c9d5963ad";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DF0A4E41BF1A8130043B95F /* Sources */ = {
@@ -300,6 +344,7 @@
 				4E00FFB31BF665AF00F537B8 /* SDWebImageManager.m in Sources */,
 				4E00FFAD1BF665AF00F537B8 /* NSData+ImageContentType.m in Sources */,
 				4E00FFAF1BF665AF00F537B8 /* SDWebImageCompat.m in Sources */,
+				9DC671C91BF7788A00AD02ED /* LoginViewController.m in Sources */,
 				4E00FFBB1BF665AF00F537B8 /* UIView+WebCacheOperation.m in Sources */,
 				4E00FFB81BF665AF00F537B8 /* UIImage+WebP.m in Sources */,
 				9DF0A4F31BF1A8140043B95F /* ViewController.m in Sources */,
@@ -320,6 +365,7 @@
 				4E00FFB11BF665AF00F537B8 /* SDWebImageDownloader.m in Sources */,
 				4E00FFBA1BF665AF00F537B8 /* UIImageView+WebCache.m in Sources */,
 				4E00FFAC1BF665AF00F537B8 /* MKAnnotationView+WebCache.m in Sources */,
+				9DC671CC1BF795CE00AD02ED /* UIColor+WithMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +475,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WithMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danyalvarez.WithMe;
@@ -440,6 +491,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WithMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danyalvarez.WithMe;

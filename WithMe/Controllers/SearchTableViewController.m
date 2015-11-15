@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    DGTSession *session = [[Digits sharedInstance] session];
+    NSLog(@"Digits Session: %@ %@ %@", session.authToken, session.authTokenSecret, session.phoneNumber);
+    
     movies = [[NSMutableArray alloc] init];
     
 

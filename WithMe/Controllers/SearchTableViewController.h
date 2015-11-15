@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DigitsKit/DigitsKit.h>
 #import "Movie.h"
 #import "WS.h"
 #import "UIImageView+WebCache.h"
