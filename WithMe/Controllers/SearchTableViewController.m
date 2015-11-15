@@ -21,6 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [PFUser loginWithDigitsInBackground:^(PFUser *user, NSError *error) {
+        if(!error){
+            NSLog(@"User: %@", user);
+        }
+    }];
+
     
     DGTSession *session = [[Digits sharedInstance] session];
     NSLog(@"Digits Session: %@ %@ %@", session.authToken, session.authTokenSecret, session.phoneNumber);

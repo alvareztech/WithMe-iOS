@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <DigitsKit/DigitsKit.h>
+#import <Parse/Parse.h>
 #import "Movie.h"
 #import "WS.h"
 #import "UIImageView+WebCache.h"
+#import "PFUser+Digits.h"
 
 @interface SearchTableViewController : UITableViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

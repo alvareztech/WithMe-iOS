@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <DigitsKit/DigitsKit.h>
+#import <Parse/Parse.h>
+
 
 
 @interface AppDelegate ()
@@ -23,7 +25,15 @@
     
     [Fabric with:@[[Digits class]]];
     
-    //Digits.sharedInstance().session() == nil
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"s0Ma09Uz4Uy3vS5GzEVyGer0KuvO0xKRdaPPvfCI"
+                  clientKey:@"Koyx7OmnxESJmNW6BGvevgMB2LYdXeQvvmdutvMk"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     
     if ([[Digits sharedInstance] session] == nil) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
