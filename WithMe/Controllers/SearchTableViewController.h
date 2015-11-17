@@ -14,6 +14,7 @@
 #import "UIImageView+WebCache.h"
 #import "PFUser+Digits.h"
 #import "AddButton.h"
+#import "MovieViewController.h"
 
 @interface SearchTableViewController : UITableViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

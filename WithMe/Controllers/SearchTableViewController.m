@@ -96,6 +96,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    MovieViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"movieViewController"];
+    viewController.movie = [movies objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 
@@ -147,12 +151,8 @@
 - (void) searchWS: (NSString *) text  {
     NSLog(@"searchWS");
     
-    NSString *urlString = [WS getSearchURL:text];
-    
-    NSLog(@"urlString %@", urlString);
-    
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[WS getSearchURL:text] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (!error) {
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

@@ -10,7 +10,8 @@
 
 @interface WS : NSObject
 
-#define API_KEY @"589e10387e0ca4ece633f5836fb0383f"
+#define API_KEY_VALUE @"589e10387e0ca4ece633f5836fb0383f"
+#define LANGUAGE_VALUE @"es"
 
 #define PROTOCOL @"http"
 #define HOST @"api.themoviedb.org"
@@ -18,9 +19,16 @@
 
 #define URI_SEARCH @"3/search/movie?query="
 #define URI_IMAGE @"image.tmdb.org/t/p/w500"
+// https://api.themoviedb.org/3/movie/168259?api_key=589e10387e0ca4ece633f5836fb0383f&language=es
 
-+ (NSString *) getApiKeyURL;
-+ (NSString *) getSearchURL: (NSString *) text;
+#define URI_MOVIE @"api.themoviedb.org/3/movie/"
+
+
++ (NSString *) apiKey;
++ (NSString *) language;
++ (NSURL *) getSearchURL: (NSString *) text;
+
++ (NSURL *) getMovieURL: (NSString *) code;
 
 + (NSURL *) getImageURL: (NSString *) name;
 

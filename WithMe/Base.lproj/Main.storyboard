@@ -122,6 +122,56 @@
             </objects>
             <point key="canvasLocation" x="2672" y="350"/>
         </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="42M-qv-kEr">
+            <objects>
+                <viewController storyboardIdentifier="movieViewController" id="qAu-d8-dKy" customClass="MovieViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Yc-Ov-csD"/>
+                        <viewControllerLayoutGuide type="bottom" id="J6j-A9-53q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zUl-M8-9lV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Voa-xJ-Kc7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="264"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="BCG-M3-V8I"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-9p-UWe">
+                                <rect key="frame" x="20" y="272" width="560" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="L5B-Zq-r7Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ORa-9p-UWe" secondAttribute="trailing" constant="20" id="ELy-3o-PUR"/>
+                            <constraint firstItem="ORa-9p-UWe" firstAttribute="leading" secondItem="zUl-M8-9lV" secondAttribute="leading" constant="20" id="GSi-Dj-zQo"/>
+                            <constraint firstItem="Voa-xJ-Kc7" firstAttribute="leading" secondItem="zUl-M8-9lV" secondAttribute="leading" id="LE5-LC-We3"/>
+                            <constraint firstAttribute="trailing" secondItem="Voa-xJ-Kc7" secondAttribute="trailing" id="Ynb-v9-fTv"/>
+                            <constraint firstItem="ORa-9p-UWe" firstAttribute="top" secondItem="Voa-xJ-Kc7" secondAttribute="bottom" constant="8" id="qwB-dH-lkp"/>
+                            <constraint firstItem="Voa-xJ-Kc7" firstAttribute="top" secondItem="zUl-M8-9lV" secondAttribute="top" id="yzy-xo-vxj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerImageView" destination="Voa-xJ-Kc7" id="J71-WJ-KNn"/>
+                        <outlet property="titleLabel" destination="ORa-9p-UWe" id="zO3-Sd-YUk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fZ-ez-nbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="350"/>
+        </scene>
         <!--Lista-->
         <scene sceneID="mF6-J4-YFo">
             <objects>

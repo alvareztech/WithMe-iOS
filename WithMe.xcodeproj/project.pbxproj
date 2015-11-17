@@ -55,6 +55,7 @@
 		9DF0A4FB1BF1A8140043B95F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0A4F91BF1A8140043B95F /* LaunchScreen.storyboard */; };
 		9DF0A5051BF1ABB60043B95F /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A5041BF1ABB60043B95F /* SearchTableViewController.m */; };
 		9DF0A5091BF1ADEB0043B95F /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0A5081BF1ADEB0043B95F /* Movie.m */; };
+		9DFB1A9E1BFAD009008857EA /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB1A9D1BFAD009008857EA /* MovieViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,8 @@
 		9DF0A5041BF1ABB60043B95F /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewController.m; path = Controllers/SearchTableViewController.m; sourceTree = "<group>"; };
 		9DF0A5071BF1ADEB0043B95F /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Movie.h; path = Classes/Movie.h; sourceTree = "<group>"; };
 		9DF0A5081BF1ADEB0043B95F /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = Classes/Movie.m; sourceTree = "<group>"; };
+		9DFB1A9C1BFAD009008857EA /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieViewController.h; path = Controllers/MovieViewController.h; sourceTree = "<group>"; };
+		9DFB1A9D1BFAD009008857EA /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieViewController.m; path = Controllers/MovieViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +344,8 @@
 				9DC671C81BF7788A00AD02ED /* LoginViewController.m */,
 				9DA7C3171BF915340004C9BA /* TasksTableViewController.h */,
 				9DA7C3181BF915340004C9BA /* TasksTableViewController.m */,
+				9DFB1A9C1BFAD009008857EA /* MovieViewController.h */,
+				9DFB1A9D1BFAD009008857EA /* MovieViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E00FFB01BF665AF00F537B8 /* SDWebImageDecoder.m in Sources */,
+				9DFB1A9E1BFAD009008857EA /* MovieViewController.m in Sources */,
 				4E00FFB31BF665AF00F537B8 /* SDWebImageManager.m in Sources */,
 				4E00FFAD1BF665AF00F537B8 /* NSData+ImageContentType.m in Sources */,
 				4E00FFAF1BF665AF00F537B8 /* SDWebImageCompat.m in Sources */,
