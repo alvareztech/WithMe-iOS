@@ -41,6 +41,7 @@
 		9DA7C3101BF904380004C9BA /* PFUser+Digits.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7C30F1BF904380004C9BA /* PFUser+Digits.m */; };
 		9DA7C3161BF90F750004C9BA /* AddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7C3151BF90F750004C9BA /* AddButton.m */; };
 		9DA7C3191BF915340004C9BA /* TasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7C3181BF915340004C9BA /* TasksTableViewController.m */; };
+		9DAA635F1BFC33AF00924BAC /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAA635E1BFC33AF00924BAC /* UINavigationBar+Awesome.m */; };
 		9DC671C31BF776AE00AD02ED /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC671BF1BF776AD00AD02ED /* Fabric.framework */; };
 		9DC671C41BF776AE00AD02ED /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC671C01BF776AE00AD02ED /* DigitsKit.framework */; };
 		9DC671C51BF776AE00AD02ED /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DC671C11BF776AE00AD02ED /* DigitsKitResources.bundle */; };
@@ -116,6 +117,8 @@
 		9DA7C3151BF90F750004C9BA /* AddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddButton.m; path = Util/AddButton.m; sourceTree = "<group>"; };
 		9DA7C3171BF915340004C9BA /* TasksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TasksTableViewController.h; path = Controllers/TasksTableViewController.h; sourceTree = "<group>"; };
 		9DA7C3181BF915340004C9BA /* TasksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TasksTableViewController.m; path = Controllers/TasksTableViewController.m; sourceTree = "<group>"; };
+		9DAA635D1BFC33AF00924BAC /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		9DAA635E1BFC33AF00924BAC /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		9DC671BF1BF776AD00AD02ED /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		9DC671C01BF776AE00AD02ED /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = SOURCE_ROOT; };
 		9DC671C11BF776AE00AD02ED /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = SOURCE_ROOT; };
@@ -171,6 +174,7 @@
 		4E00FF891BF54B3400F537B8 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				9DAA635C1BFC339900924BAC /* NavigationBar */,
 				9DA7C3121BF905F70004C9BA /* Others */,
 				9DA7C3111BF904450004C9BA /* Digits */,
 				9DA7C30D1BF903B60004C9BA /* ParseDigits */,
@@ -289,6 +293,15 @@
 				9DA7C3151BF90F750004C9BA /* AddButton.m */,
 			);
 			name = Custom;
+			sourceTree = "<group>";
+		};
+		9DAA635C1BFC339900924BAC /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				9DAA635D1BFC33AF00924BAC /* UINavigationBar+Awesome.h */,
+				9DAA635E1BFC33AF00924BAC /* UINavigationBar+Awesome.m */,
+			);
+			name = NavigationBar;
 			sourceTree = "<group>";
 		};
 		9DF0A4DF1BF1A8130043B95F = {
@@ -473,6 +486,7 @@
 				4EBF24AB1BF4D62D00D436ED /* WS.m in Sources */,
 				4E00FFB61BF665AF00F537B8 /* UIImage+GIF.m in Sources */,
 				4E00FFB11BF665AF00F537B8 /* SDWebImageDownloader.m in Sources */,
+				9DAA635F1BFC33AF00924BAC /* UINavigationBar+Awesome.m in Sources */,
 				9DA7C3161BF90F750004C9BA /* AddButton.m in Sources */,
 				4E00FFBA1BF665AF00F537B8 /* UIImageView+WebCache.m in Sources */,
 				4E00FFAC1BF665AF00F537B8 /* MKAnnotationView+WebCache.m in Sources */,

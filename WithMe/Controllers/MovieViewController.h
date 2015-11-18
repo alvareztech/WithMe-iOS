@@ -11,11 +11,13 @@
 #import "Movie.h"
 #import "WS.h"
 #import "UIImageView+WebCache.h"
+#import "UINavigationBar+Awesome.h"
 
 @interface MovieViewController : UIViewController
 
 @property (nonatomic, strong) Movie *movie;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 
 @end
